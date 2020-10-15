@@ -1,13 +1,12 @@
-var teste = {};
+let url = "https://www.dnd5eapi.co/api/races";
+let dataReturn;
 
-var xmlhttp = new XMLHttpRequest();
-var url = "https://www.dnd5eapi.co/api/races";
-
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myArr = JSON.parse(this.responseText);
-        teste = myArr;
-    }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+/*
+let jqxhr = $.get( url)
+    .done(function(data) {
+      dataReturn = data;
+    })
+    .fail(function() {
+      alert( "error" );
+    });
+    */

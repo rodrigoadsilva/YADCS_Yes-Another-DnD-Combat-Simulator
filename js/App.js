@@ -1,35 +1,44 @@
-let url = "https://www.dnd5eapi.co/api/races";
+let url = "https://www.dnd5eapi.co/api/";
 let dataReturn;
+let playerCharacter = {}
 
-function callRaces(){
-  let callResult;
-  $.ajax({url, async: false})
-  .done(function(data) {
-    dataReturn = data.results;
-    callResult = data.results;
-  })
-  .fail(function() {
-    alert( "error" );
-  });
-  return callResult;
+function callRaces() {
+    let callResult
+    $.get({
+        url: url + 'races',
+        async: false
+    })
+        .done(function (data) {
+            dataReturn = data;
+            callResult = data.results;
+        })
+        .fail(function () {
+            alert("error");
+        });
+    return callResult;
 }
 
-function createSelectorRace(races){
-  let racesSelector = '<option selected>Choose here a race</option>';
-  races.forEach((race) => {
-    racesSelector += `<option value="${race.index}">${race.name}</option>`
-    console.log(race)
-  });
-  $('#characterRaceSelector').html(racesSelector)
+function createSelectorRace(races) {
+    let racesSelector = '<option selected>Choose here a race</option>';
+    races.forEach((race) => {
+        racesSelector += `<option value="${race.index}">${race.name}</option>`
+    });
+    $('#characterRaceSelector').html(racesSelector)
 }
 
-function createSelectorClasses(classes){
+function createSelectorClasses(classes) {
 
 }
 
 $(document).ready(() => {
-  let races = callRaces();
-  console.log(races)
-  createSelectorClasses(races);
-  
+    $('#characterRaceSelector').change(() => {
+        let selectorValue = $('#characterRaceSelector').val();
+        if(selectorValue !== 'Choose here a race'){
+            console.log(selectorValue);
+            $('#collapseTwo').collapse('toggle');
+            $('#collapseOne').collapse('toggle');
+        }
+    })
+    let races = callRaces();
+    createSelectorRace(races);
 })

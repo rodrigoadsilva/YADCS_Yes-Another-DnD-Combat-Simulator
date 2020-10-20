@@ -2,66 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>YADCS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>YADCS</title>
 </head>
 
 <body>
-    <div class="container h-100">
-        <div class="row justify-content-center h-100">
-            <div class="col-6">
-                <img src="./imgs/logo/logo_sm.png" class="img-fluid my-3" alt="Page logo1">
+  <div class="container h-100">
+    <div class="row justify-content-center h-100">
+      <div class="col-6">
+        <img src="./imgs/logo/logo_sm.png" class="img-fluid my-3" alt="Page logo1">
+      </div>
+      <div class="col-10 border border-danger p-3 bg-light">
+        <table class="table table-sm">
+          <tbody>
+            <tr>
+              <th scope="row">Race</th>
+              <td id="raceSelected">...</td>
+            </tr>
+            <tr>
+              <th scope="row">Class</th>
+              <td id="classSelected">...</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="accordion" id="characterAccordion">
+          <!-- Race Card -->
+          <div class="card">
+            <div class="card-header py-0 my-0" id="headingOne">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Select a Race
+              </button>
             </div>
-            <div class="col-10 border border-danger p-3 bg-light">
-                <p class="text-center">Hi! Welcome to another DnD Combat Simulator</p>
-                <div class="accordion" id="characterAccordion">
-                    <!-- Race Card -->
-                    <div class="card">
-                      <div class="card-header" id="headingOne">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Select a Race
-                        </button>
-                      </div>
-                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#characterAccordion">
-                        <div class="card-body">
-                            <select class="custom-select" id="characterRaceSelector">
-                            </select>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Class Card -->
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Select a Class
-                          </button>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#characterAccordion">
-                          <div class="card-body">
-                              <select class="custom-select" id="characterClassSelector">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#characterAccordion">
+              <div class="card-body">
+                <select class="custom-select" id="characterRaceSelector">
+                </select>
+              </div>
             </div>
+          </div>
+          <!-- Class Card -->
+          <div class="card">
+            <div class="card-header py-0 my-0" id="headingTwo">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Select a Class
+              </button>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#characterAccordion">
+              <div class="card-body">
+                <select class="custom-select" id="characterClassSelector">
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <!-- jQuery -->
-    <script src="./js/jquery-3.5.1.min.js"></script>
-    <!-- Compiled Bootstrap JavaScript -->
-    <script src="./js/bootstrap.min.js"></script>
-    
-    <script src="js/App.js"></script>
+  <!-- jQuery -->
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <!-- Compiled Bootstrap JavaScript -->
+  <script src="./js/bootstrap.min.js"></script>
+
+  <script src="js/App.js"></script>
 </body>
 
 </html>
